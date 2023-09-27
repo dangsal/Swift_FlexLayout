@@ -15,3 +15,34 @@ final class FlexLayoutViewController: UIViewController {
     }
     
 }
+
+#if DEBUG
+import SwiftUI
+
+struct PreView: PreviewProvider {
+    static var previews: some View {
+        let viewController = FlexLayoutViewController()
+        viewController.toPreview()
+    }
+}
+#endif
+
+#if DEBUG
+import SwiftUI
+extension UIViewController {
+    private struct Preview: UIViewControllerRepresentable {
+            let viewController: UIViewController
+
+            func makeUIViewController(context: Context) -> UIViewController {
+                return viewController
+            }
+
+            func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+            }
+        }
+
+        func toPreview() -> some View {
+            Preview(viewController: self)
+        }
+}
+#endif
