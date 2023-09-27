@@ -7,6 +7,8 @@
 
 import UIKit
 
+import FlexLayout
+
 final class FlexLayoutViewController: UIViewController {
     
     override func viewDidLoad() {

@@ -14,6 +14,9 @@
 		D72314B92AC41CD300D69742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72314B82AC41CD300D69742 /* Assets.xcassets */; };
 		D72314BC2AC41CD300D69742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72314BA2AC41CD300D69742 /* LaunchScreen.storyboard */; };
 		D72314C52AC41CEA00D69742 /* FlexLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72314C42AC41CEA00D69742 /* FlexLayoutViewController.swift */; };
+		D7B614522AC4206F00CD08BA /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = D7B614512AC4206F00CD08BA /* FlexLayout */; };
+		D7B614542AC4206F00CD08BA /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = D7B614532AC4206F00CD08BA /* FlexLayoutYoga */; };
+		D7B614562AC4206F00CD08BA /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = D7B614552AC4206F00CD08BA /* FlexLayoutYogaKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B614522AC4206F00CD08BA /* FlexLayout in Frameworks */,
+				D7B614542AC4206F00CD08BA /* FlexLayoutYoga in Frameworks */,
+				D7B614562AC4206F00CD08BA /* FlexLayoutYogaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,11 @@
 			dependencies = (
 			);
 			name = Swift_FlexLayout;
+			packageProductDependencies = (
+				D7B614512AC4206F00CD08BA /* FlexLayout */,
+				D7B614532AC4206F00CD08BA /* FlexLayoutYoga */,
+				D7B614552AC4206F00CD08BA /* FlexLayoutYogaKit */,
+			);
 			productName = Swift_FlexLayout;
 			productReference = D72314AC2AC41CD200D69742 /* Swift_FlexLayout.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +125,9 @@
 				Base,
 			);
 			mainGroup = D72314A32AC41CD200D69742;
+			packageReferences = (
+				D7B6144A2AC4201A00CD08BA /* XCRemoteSwiftPackageReference "FlexLayout" */,
+			);
 			productRefGroup = D72314AD2AC41CD200D69742 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,6 +230,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -273,6 +288,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -369,6 +385,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7B6144A2AC4201A00CD08BA /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.33;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7B614512AC4206F00CD08BA /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7B6144A2AC4201A00CD08BA /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+		D7B614532AC4206F00CD08BA /* FlexLayoutYoga */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7B6144A2AC4201A00CD08BA /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayoutYoga;
+		};
+		D7B614552AC4206F00CD08BA /* FlexLayoutYogaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7B6144A2AC4201A00CD08BA /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayoutYogaKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D72314A42AC41CD200D69742 /* Project object */;
 }
