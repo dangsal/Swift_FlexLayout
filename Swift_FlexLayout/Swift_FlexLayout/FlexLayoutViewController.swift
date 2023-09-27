@@ -19,6 +19,7 @@ final class FlexLayoutViewController: UIViewController {
         label.text = "label1"
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 1
+        label.backgroundColor = .green
         return label
     }()
     private let label2: UILabel = {
@@ -26,6 +27,7 @@ final class FlexLayoutViewController: UIViewController {
         label.text = "label2"
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 1
+        label.backgroundColor = .yellow
         return label
     }()
     private let label3: UILabel = {
@@ -33,13 +35,14 @@ final class FlexLayoutViewController: UIViewController {
         label.text = "label3"
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 1
+        label.backgroundColor = .blue
         return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupLayout()
-        
+        self.configureUI()
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,13 +54,18 @@ final class FlexLayoutViewController: UIViewController {
     
     private func setupLayout() {
         self.view.addSubview(self.flexView)
-        self.flexView.flex.define {
-            $0.addItem(self.label1)
-            $0.addItem(self.label2)
-            $0.addItem(self.label3)
+        self.flexView.flex
+            .paddingLeft(50)
+            .direction(.row)
+            .define {
+                $0.addItem(self.label1).width(100)
+                $0.addItem(self.label2).width(40)
+                $0.addItem(self.label3)
         }
-     
-        
+    }
+    
+    private func configureUI() {
+        self.flexView.backgroundColor = .systemRed
     }
 }
 
